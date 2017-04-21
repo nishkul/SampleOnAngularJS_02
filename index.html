@@ -1,0 +1,77 @@
+<html ng-app="myAppOnService">
+<head>
+    <title>
+    Sample2 on Contact app using service 
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="appDataService.js"></script>
+    <script src="appController.js"></script>
+    <script src="appService.Service.js"></script>
+<!--    <script src="appService.Value.js"></script>-->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+    <body>
+        
+           <div ng-controller="ServiceCtrl">
+        <div >
+               
+               <p>Information About App </p>
+            <p>Name:</p><span ><b>{{appName}}</b></span>
+
+            <p>year:</p><span ><b>{{year}}</b></span>
+            <p>Made by:</p><span ><b>{{madeBy}}</b></span>
+
+               </div>
+   <div  class="row">
+       
+        <div class="col-md-4" style="width:40%;float:left">
+            <Button  ng-click="addnewUser()">Add</Button>
+            <div class="list-group" >
+                <div class="list-group">
+                 <button type="button" ng-repeat="user in userList" ng-click=updateUserData($index)  class="list-group-item">
+                    {{user.name}}<br>{{user.username}}
+                    </button>
+                </div>
+</div>
+            
+            
+            
+<!--
+             <ul class="list-group">
+  <li ng-repeat="user in userList" ng-click=updateUserData($index) class="list-group-item">&nbsp;&nbsp;&nbsp;<span   >{{user.name}}<br>{{user.username}}</span></li>
+        </ul>
+-->
+        </div>
+        <div class="col-md-5" >
+         <div class="media">
+               <div class="alert alert-success" role="alert" ng-if="successMessage">{{successMessage}}</div>
+             <div class="alert alert-danger" role="alert"ng-if="errorMessage">{{errorMessage}}</div>
+  <div  class="media-right ">
+ <img ng-src="{{singleUser.url}}">
+  </div>
+             "name": "Chelsey Dietrich",
+    "username": "Kamren",
+  <div class=" col-md-6  media-body">
+      <Button ng-hide="toggleEditFlag" ng-click="toggleEdit()">Edit</Button><Button ng-show="toggleEditFlag" ng-click="save()">Save</Button>
+      <h4 class="media-heading"><b>Name </b><span ng-hide="toggleEditFlag" >{{singleUser.name}}</span><input type="text" ng-show="toggleEditFlag" ng-model="singleUser.name"></h4><br>
+      <h5 class="media-heading"><b>UserName </b><span ng-hide="toggleEditFlag" >{{singleUser.username}}</span><input type="text" ng-show="toggleEditFlag" ng-model="singleUser.username"></h5><br>
+<h5 class="media-heading"> <b>Email</b> <span ng-hide="toggleEditFlag" >{{singleUser.email}}</span><input type="text" ng-show="toggleEditFlag" ng-model="singleUser.email"></h4><br>
+<h5 class="media-heading"><b>Address </b><span ng-hide="toggleEditFlag" >{{singleUser.address.street}}</span><input type="text" ng-show="toggleEditFlag" ng-model="singleUser.address.street"></h5><br>
+<h5 class="media-heading"><b>City </b><span ng-hide="toggleEditFlag" >{{singleUser.address.city}}</span><input type="text" ng-show="toggleEditFlag" ng-model="singleUser.address.city"></h5><br>
+<h5 class="media-heading"><b>Company name </b><span ng-hide="toggleEditFlag" >{{singleUser.company.name}}</span><input type="text" ng-show="toggleEditFlag"  ng-model="singleUser.company.name"></h5><br>
+      <h5 class="media-heading"><b>Phone number </b><span ng-hide="toggleEditFlag" >{{singleUser.phone}}</span><input type="text" ng-show="toggleEditFlag"  ng-model="singleUser.phone"></h5>
+      
+      
+  </div>
+</div>
+       
+        </div>
+             </div>
+</div>
+</body>
+</html>
