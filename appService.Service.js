@@ -4,7 +4,7 @@
     app.service("myService2",function(){
        
         this.appName="Second app on angularjs";
-        this.madeBy="Manish ";
+        this.madeBy="Your Name ";
         this.year="2017";
         
 
